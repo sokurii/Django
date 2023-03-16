@@ -1,0 +1,37 @@
+<vscode - new Terminal>
+
+>source venv/Scripts/activate  : 가상환경 들어가기
+
+>pip install django==3.2.18	: 장고 설치
+
+>pip list			
+
+>pip freeze > requirements.txt
+
+>pip install -r requirements.txt
+
+>django-admin startproject firstproject
+>django-admin startproject secondproject . 
+점 찍는 이유 
+- secondproject (알집 '여기에 풀기' 처럼 다 풀려있음)
+- firstproject>firstproject (폴더 안에 폴더 하나 더 생성. 그 안에 들어있음)
+=> 꼬옥 찍어주길 바라~ 
+
+>python manage.py runserver
+(db.sqlite3 이라는 파일이 생겼다!!)
+=> 링크 ctrl+클릭 하면 장고 서버 켜진다 
+
+>ctrl + C  서버 꺼주기
+
+>python manage.py startapp <애플리케이션이름>
+>python manage.py startapp articles 
+(프로젝트 위에 articles app  생성되었다.)
+
+기계적으로 숙련될정도로.. 연습하기.. 바탕화면에서 계속 반복해서 익숙해지기
+
+
+<프로젝트인지 아닌지 아는 방법>
+프로젝트라면 폴더 안에 settings.py 있으면 프로젝트
+
+> secondproject>settings.py>INSTALLED_APPS = [
+맨 첫 줄에 'articles', 넣어주기 

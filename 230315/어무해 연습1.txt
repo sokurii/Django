@@ -1,0 +1,5 @@
+1. 
+django-admin startproject my_pjt
+django-admin startapp my_app
+python manage.py runserver
+

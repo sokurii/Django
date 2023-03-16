@@ -1,0 +1,38 @@
+url로 접근하면 views로 갑니다.. 
+어떤 함수 만들거라고 계획을..세워라.. 
+-------------------------------------------------------------
+1. django_pjt 폴더 생성 - cmd 
+>python -m venv venv(가상환경 만들기)
+
+2. 폴더 vscode로 드래그
+>source venv/Scripts/activate(활성화)
+
+3. pip list :아직 장고 설치 전 
+> pip install django==3.2.18
+
+4. 새 프로젝트 만들어주기(앱과 차별점: settings.py유무 (프로젝트 설정 관리))
+> django-admin startproject my_pjt .
+
+5. 새 앱 만들어주기(일반적으로 앱 이름은 복수형!)
+> python manage.py startapp articles
+
+6. my_pjt-settings.py 에 설치한 새 앱 넣어주기
+(앱을 사용하기 위해 반드시 리스트에 추가해줘야함)
+(INSTALLED_APPS=[  'articles',  ) 
+
+7. 서버 가동 시키고 확인해보자
+> python manage.py runserver 
+----------------------------------------------------------------
+<url -> view -> template 데이터 흐름 이해하기>
+
+1. my_pjt-urls
+> from articles import views 
+> urlpatterns = [
+        path('articles/',views.index),
+
+2. articles-views
+> def index(request):
+        return render(request, 'articles/index.html')
+
+3. articles + templates (새 템플릿 폴더 생성)
+templates + articles(폴더) + index.html(함수 실행 파일 생성)
