@@ -1,0 +1,9 @@
+<두번째방법>
+In [27]: article = Article(title='나이',content='26')
+In [28]: article.save()
+
+<세번째 방법.. 저장 안해도 됨> = 검수 단계가 없어서 좋진 않다 
+Article.objects.create(title='되나?', content='이게되네')
+
+
+product_price = {"라면":980,"홈런볼":1500,"칙촉":2300, "식빵":1800}

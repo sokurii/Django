@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1>Throw</h1>
+
+    {% comment %} 
+    action : 어디로 보낼래(url), method : 어떻게 보낼래
+    메소드에 뭘 적지 않는다면 기본적으로 get형태 메소드
+    {% endcomment %}
+    <form action= "{% url 'articles:catch' %}" method="GET">
+         {% comment %} for문 내용과 id 내용 같아야함(message) {% endcomment %}
+         {% comment %} GET :  내가 작성한 데이터를 url 형태로  {% endcomment %}
+         <label for="message">보내고 싶은 데이터 적기</label>
+         <input type="text" id='message' name='message'>
+
+        {% comment %} 제출 버튼 만들기 {% endcomment %}
+        <input type="submit"> 
+    </form>
+
+{% endblock content %}
