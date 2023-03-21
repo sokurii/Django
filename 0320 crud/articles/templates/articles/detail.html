@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% comment %} 
+    화면에 보여질 부분---------------------------- {% endcomment %}
+    <h1>DETAIL</h1>
+    <hr>
+    
+    <p>글 제목 : {{article.title}}</p>
+    <p>글 내용 : {{article.content}}</p>
+    <p>생성시각 : {{article.created_at}}</p>
+    <p>수정시각 : {{article.updated_at}}</p>
+    <hr>
+
+    {% comment %}--------------------------------
+    뒤로가기 링크 만들기 {% endcomment %}
+    <a href="{% url 'articles:index' %}">뒤로가기</a>
+
+    {% comment %} 
+    수정하기 링크 만들기 {% endcomment %}
+    <a href="{% url 'articles:edit' article.pk %}">수정하기</a>
+
+    {% comment %} 
+    삭제 폼(버튼) 만들기
+    action = 'submit 하면 어디로 보내지?' {% endcomment %}
+    <form action="{% url 'articles:delete' article.pk %}">
+        {% csrf_token %}
+        <input type="submit" value='삭제하기'>
+    </form>
+{% endblock content %}
+
