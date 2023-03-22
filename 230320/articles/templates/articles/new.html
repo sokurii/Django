@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>새 글 작성 NEW</h1>
+    <hr>
+
+    {% comment %} 
+    <form 태그>로 입력 창 만들기 
+    action="(제출)누르면 어디로 보내지?를 적어주는 부분"{% endcomment %}
+    <form action="{% url 'articles:create' %}" method="POST">
+        {% csrf_token %}
+        
+        {% comment %} 
+        제목(title) {% endcomment %}
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title"><br>
+
+        {% comment %} 
+        내용(content) {% endcomment %}
+        <label for="content">내용:</label>
+        <input type="text" id="content" name="content"><br>
+
+        {% comment %} 
+        제출(submit) {% endcomment %}
+        <input type="submit">
+
+    </form>
+
+{% endblock content %}
+
